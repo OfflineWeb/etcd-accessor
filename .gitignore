@@ -9,11 +9,8 @@ dist/
 nbdist/
 .nb-gradle/
 
-RESTConnector/nbproject/
-RESTConnector/target/
-
-DBConnector/nbproject/
-DBConnector/target/
+nbproject/
+target/
 
 ### Java ###
 *.class

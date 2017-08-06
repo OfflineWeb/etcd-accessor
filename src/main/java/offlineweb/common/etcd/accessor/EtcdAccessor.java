@@ -26,6 +26,14 @@
 package offlineweb.common.etcd.accessor;
 
 import offlineweb.common.logger.annotations.Loggable;
+import offlineweb.common.restconnector.RESTClient;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import static offlineweb.common.etcd.accessor.util.EtcdConfig.*;
 
 /**
  * @author papa
@@ -35,7 +43,23 @@ import offlineweb.common.logger.annotations.Loggable;
 @Loggable
 public class EtcdAccessor {
 
-    private void createDir(String dirName) {
+    private void createDir(String dirName) throws IOException {
+        Map<String, String> reqBody = new HashMap<>();
+        reqBody.put("dir", "true");
+        Map etcdResult = RESTClient.put(getEtcdURL(),
+            Arrays.asList("v2", "keys", dirName),
+            null,
+            reqBody,
+            null,
+            RESTClient.REQUEST_BODY.KEY_VALUE
+            );
+    }
 
+    private void getDir(String dirName) {
+        Map<String, String> pathParams = new HashMap<>();
+        pathParams.put("dir", "true");
+
+        Map<String, String> dirMap = new HashMap<>();
+        dirMap.put("dir", "true");
     }
 }

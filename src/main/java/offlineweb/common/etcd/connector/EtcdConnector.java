@@ -23,34 +23,25 @@
  *
  */
 
-package offlineweb.common.etcd.accessor.util;
+package offlineweb.common.etcd.connector;
+
+import offlineweb.common.logger.annotations.Loggable;
+import offlineweb.common.restconnector.RESTClient;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import static offlineweb.common.etcd.connector.util.EtcdConfig.*;
 
 /**
  * @author papa
  * created on 8/3/17.
  */
-public class EtcdException extends RuntimeException {
-    public EtcdException() {
-        super();
-    }
 
-    public EtcdException(String message) {
-        super(message);
-    }
+@Loggable
+public class EtcdConnector {
 
-    public EtcdException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public EtcdException(Throwable cause) {
-        super(cause);
-    }
-
-    public EtcdException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
-
-    public EtcdException(Object message) {
-        super(message.toString());
-    }
+    
 }

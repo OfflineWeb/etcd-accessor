@@ -23,43 +23,34 @@
  *
  */
 
-package offlineweb.common.etcd.accessor;
-
-import offlineweb.common.logger.annotations.Loggable;
-import offlineweb.common.restconnector.RESTClient;
-
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import static offlineweb.common.etcd.accessor.util.EtcdConfig.*;
+package offlineweb.common.etcd.connector.util;
 
 /**
  * @author papa
  * created on 8/3/17.
  */
-
-@Loggable
-public class EtcdAccessor {
-
-    private void createDir(String dirName) throws IOException {
-        Map<String, String> reqBody = new HashMap<>();
-        reqBody.put("dir", "true");
-        Map etcdResult = RESTClient.put(getEtcdURL(),
-            Arrays.asList("v2", "keys", dirName),
-            null,
-            reqBody,
-            null,
-            RESTClient.REQUEST_BODY.KEY_VALUE
-            );
+public class EtcdException extends RuntimeException {
+    public EtcdException() {
+        super();
     }
 
-    private void getDir(String dirName) {
-        Map<String, String> pathParams = new HashMap<>();
-        pathParams.put("dir", "true");
+    public EtcdException(String message) {
+        super(message);
+    }
 
-        Map<String, String> dirMap = new HashMap<>();
-        dirMap.put("dir", "true");
+    public EtcdException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public EtcdException(Throwable cause) {
+        super(cause);
+    }
+
+    public EtcdException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+
+    public EtcdException(Object message) {
+        super(message.toString());
     }
 }

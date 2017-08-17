@@ -23,7 +23,7 @@
  *
  */
 
-package offlineweb.common.etcd.accessor.util;
+package offlineweb.common.etcd.connector.util;
 
 /**
  * @author papa

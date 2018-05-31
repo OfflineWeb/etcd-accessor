@@ -43,5 +43,20 @@ import static offlineweb.common.etcd.connector.util.EtcdConfig.*;
 @Loggable
 public class EtcdConnector {
 
-    
+    private void putKey() {
+
+    }
+
+    private void getKey() {
+
+    }
+
+    private void putKeySet() {
+
+
+    }
+
+    private void getKeySet() {
+
+    }
 }
